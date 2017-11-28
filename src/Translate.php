@@ -44,12 +44,12 @@ class Translate
         $tr = Config::get($fullKey, Config::get($fallBackKey));
 
         if (! $tr || ! $vars) {
-            return $tr;
+            return $tr ?? '';
         }
 
         $tr = strtr($tr, $vars);
 
-        return $tr;
+        return $tr ?? '';
     }
 
 
