@@ -31,6 +31,28 @@ $anotherTranslation = Translate::get('myCategory', 'anotherTranslationKey', [
 ]);
 ```
 
+### Usage in Felicity Twig
+
+If you have required Felicity Twig into your project, you can use translations in twig as follows:
+
+```twig
+{# As a function #}
+{{ translate('myTranslation', 'optionalCategory') }}
+
+{# As a filter #}
+{{ 'myTranslation'|translate('optionalCategory') }}
+```
+
+If you do not provide a category, the default will be used, which is `dev` unless you set a default with Felicity Config:
+
+```php
+<?php
+
+use felicity\config\Config;
+
+Config::set('lang.defaultTwigCategory', 'myCategory');
+```
+
 ## License
 
 Copyright 2017 BuzzingPixel, LLC
